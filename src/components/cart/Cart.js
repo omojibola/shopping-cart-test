@@ -7,9 +7,8 @@ import * as actionTypes from '../../store/actions/cartActions';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const basket = useSelector((state) => state.cart.basket);
-
   const dispatch = useDispatch();
+  const basket = useSelector((state) => state.cart.basket);
 
   const removeFromBasket = (id) => {
     dispatch(actionTypes.removeItem(id));

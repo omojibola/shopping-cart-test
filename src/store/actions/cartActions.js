@@ -1,4 +1,5 @@
 export const ADD_ITEM = 'ADD_ITEM';
+export const GET_ITEMS = 'GET_ITEMS';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const EMPTY_BASKET = 'EMPTY_BASKET';
 export const INCREASE = 'INCREASE';
@@ -7,7 +8,9 @@ export const DECREASE = 'DECREASE';
 export const addItem = (product) => {
   return { type: ADD_ITEM, item: product };
 };
-
+export const getItems = (items) => {
+  return { type: GET_ITEMS, payload: items };
+};
 export const removeItem = (id) => {
   return { type: REMOVE_ITEM, id: id };
 };

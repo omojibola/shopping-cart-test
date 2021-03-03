@@ -14,13 +14,27 @@ const cartReducer = (state = initialState, action) => {
         (basketItem) => basketItem.id === action.item.id
       );
       if (i >= 0) {
-        console.log(`item is already in cart, check cart to add more!`);
+        alert(`item is already in cart, check cart to add more!`);
+        return {
+          ...state,
+          basket: [...state.basket],
+        };
       }
+      localStorage.setItem(
+        'basket',
+        JSON.stringify([...state.basket, action.item])
+      );
 
-      localStorage.setItem('basket', JSON.stringify(state.basket));
       return {
         ...state,
         basket: [...state.basket, action.item],
+      };
+    case actionTypes.GET_ITEMS:
+      let newCart = localStorage.getItem('products');
+
+      return {
+        ...state,
+        basket: newCart,
       };
 
     case actionTypes.REMOVE_ITEM:
