@@ -11,3 +11,8 @@ nav {
   display: flex;
   margin-left: auto;
 }
+
+nav a {
+  color: #000;
+  text-decoration: none;
+}

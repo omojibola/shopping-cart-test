@@ -56,4 +56,25 @@
   .product-case {
     justify-content: center;
   }
+  .wrapper {
+    display: grid;
+    grid: auto / repeat(3, 1fr);
+    grid-gap: 40px 20px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    display: grid;
+    grid: auto / repeat(3, 1fr);
+    grid-gap: 40px 20px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .wrapper {
+    justify-items: center;
+    align-items: center;
+    width: 75%;
+  }
 }
